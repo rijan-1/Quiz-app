@@ -1,14 +1,14 @@
-import { useContext } from "react"
-import { QuizContext } from "./Context"
-import  '../App.css'
+import './Main.css'
+import { myContext } from '../App'
+import { useContext } from 'react'
 
 export const Main = () => {
 
-    const {setCurrentScreen} = useContext(QuizContext)
+    const {setGameState} = useContext(myContext)
   return (
-    <div>
-  
-        <button onClick={()=>setCurrentScreen('Quiz')}>Start quiz</button>
+    <div className = 'Main'>
+        <h2>Welcome</h2>
+        <button className='MainMenuButton'onClick ={()=>{setGameState('Quiz')}}>Begin Quiz</button>
       
     </div>
   )

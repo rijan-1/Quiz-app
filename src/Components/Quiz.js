@@ -1,47 +1,73 @@
-import { useState } from "react"
-import { Questions } from "./Questions"
-import { QuizContext } from "./Context"
-import { useContext } from "react"
-import '../App.css'
+import { Questions } from "./Questions";
+import { useState } from "react";
+import { useContext } from "react";
+import { myContext } from "../App";
+
+import "./Quiz.css";
+
 export const Quiz = () => {
-    const {setScore,score,setCurrentScreen}= useContext(QuizContext)
+  const { setTotalScore, totalScore,setGameState  } = useContext(myContext);
 
+  const [questionNumber, setQuestionNumber] = useState(0);
+  const [selectedQuestion, setSelectedQuestion] = useState("");
 
-    const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [optionChosen, setOptionChosen] = useState('')
-
-    const nextQuestion = ()=>{
-        if (Questions[currentQuestion].asnwer=== optionChosen){
-            setScore(score+1)
-        }
-        setCurrentQuestion(currentQuestion+1)
+  const nextQuestion = () => {
+    if (selectedQuestion === Questions[questionNumber].asnwer) {
+      setTotalScore(totalScore + 1);
     }
 
-    const finishQuiz=()=>{
-        if (Questions[currentQuestion].asnwer=== optionChosen){
-            setScore(score+1)
-        }
-        setCurrentScreen('End')
-    }
+    selectedQuestion ===''? alert('You have to slect an option'):
+    setQuestionNumber(questionNumber + 1);
+  };
+
+  const finalQuestion =()=>{
+    if (selectedQuestion === Questions[questionNumber].asnwer) {
+        setTotalScore(totalScore + 1);
+      }
+      setGameState('End')
+
+  }
+
   return (
-    <div className='Quiz'>
-    <h2>Quiz</h2> 
+    <div>
+      <div className="questions">
+        {Questions[questionNumber].prompt}
+        <button
+          onClick={() => {
+            setSelectedQuestion("A");
+          }}
+        >
+          A: {Questions[questionNumber].optionA}
+        </button>
+        <button
+          onClick={() => {
+            setSelectedQuestion("B");
+          }}
+        >
+          B: {Questions[questionNumber].optionB}
+        </button>
+        <button
+          onClick={() => {
+            setSelectedQuestion("C");
+          }}
+        >
+          C: {Questions[questionNumber].optionC}
+        </button>
+        <button
+          onClick={() => {
+            setSelectedQuestion("D");
+          }}
+        >
+          D: {Questions[questionNumber].optionD}
+        </button>
 
-    <h3>{Questions[currentQuestion].prompt}</h3>
-    <div className="Options">
-    A:<button onClick={()=>{setOptionChosen('A')}}> {Questions[currentQuestion].optionA}</button>
-    B: <button onClick={()=>{setOptionChosen('B')}}>{Questions[currentQuestion].optionB}</button>
-    C: <button onClick={()=>{setOptionChosen('C')}}>{Questions[currentQuestion].optionC}</button>
-   D:<button onClick={()=>{setOptionChosen('D')}}>{Questions[currentQuestion].optionD}</button>
-   
 
-   </div>
-   {currentQuestion === Questions.length -1?
-   <button onClick = {finishQuiz}>Finish Quiz</button>: 
-      <button onClick ={nextQuestion}>Next Question</button>
-   }
-      {score}
-    </div>
-  )
+        {questionNumber ===Questions.length-1 ? <button onClick = {finalQuestion}>Finish Quiz</button>:
+        <button onClick={nextQuestion}>Next Question</button>
+
 }
-
+      </div>
+      {totalScore}
+    </div>
+  );
+};

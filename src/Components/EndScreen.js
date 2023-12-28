@@ -1,18 +1,23 @@
+
 import { useContext } from "react"
-import { QuizContext } from "./Context"
+import { myContext } from "../App"
+import { Questions } from "./Questions"
 
 export const EndScreen = () => {
-    const {setCurrentScreen, setScore,score} = useContext(QuizContext)
+
+    const {totalScore,setGameState,setTotalScore}= useContext(myContext)
+
   return (
     <div>
-        <h2>Your total score is : {score} marks</h2>
+        <h1>End of the Quiz</h1>
 
-
-        <button onClick ={()=>{setCurrentScreen('Main'); setScore(0)}}>Retsart</button>
-
-
+        <div>
+            <h2>Your Score: {totalScore}/{Questions.length}</h2>
+        </div>
+        <button onClick={()=>{setGameState('Main'); setTotalScore(0)}}>Restart</button>
       
     </div>
   )
 }
+
 

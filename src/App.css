@@ -4,15 +4,21 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+ 
+  width: 100vh;
+  z-index: 99;
 }
 
 .Menu{
   height: 500px;
   width: 500px;
 }
-.Quiz{
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
- 
+
+button :active{
+  background-color: yellow;
+  color: yellow;
+}
+button :hover{
+  background-color: yellow;
+  color: yellow;
 }

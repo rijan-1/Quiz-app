@@ -1,28 +1,33 @@
-import { Quiz } from "./Components/Quiz";
-import { EndScreen } from "./Components/EndScreen";
-import { Main } from "./Components/Main";
-import { useState} from "react";
+import { Main } from "./Components/Main"
+import {useState} from 'react'
+import { Quiz } from "./Components/Quiz"
 import './App.css'
-import { QuizContext } from "./Components/Context";
+import { createContext } from "react"
+import { EndScreen } from "./Components/EndScreen"
 
 
+export const myContext = createContext()
+const App = () => {
 
-function App() {
-  const [currentScreen,setCurrentScreen] = useState("Main");
-  const [score, setScore] = useState(0)
-
+  const [GameState, setGameState] = useState('Main')
+  const [totalScore,setTotalScore] = useState(0)
   return (
-    <div className="App">
-      <h1>Quiz app</h1>
-      <QuizContext.Provider value = {{currentScreen, setCurrentScreen, score, setScore}}>
-        {currentScreen === 'Main' && <Main/>}
+    <div className='App'>
+      <h1 className='Header'>Quiz App</h1>
+    
 
-   
-      {currentScreen === "Quiz" && <Quiz />}
-      {currentScreen === "End" && <EndScreen />}
-    </QuizContext.Provider>
+      <div>
+        <myContext.Provider value={{setGameState, setTotalScore,totalScore}}>
+        {GameState==='Main'&&<Main/>}
+        {GameState==='Quiz'&&<Quiz/>}
+        {GameState==='End'&&<EndScreen/>}
+
+</myContext.Provider>
+      </div> 
+     
+      
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
