@@ -1,8 +1,8 @@
 export const Questions = [
     {
       prompt: " Who is the main protagonist in the anime One Piece?",
-      optionA: " Monkey D. Luffy",
-      optionB: "Roronoa Zoro",
+      optionA: " Luffy",
+      optionB: "Zoro",
       optionC: "Nami",
       optionD: " Tony Tony Chopper",
       asnwer: "A",

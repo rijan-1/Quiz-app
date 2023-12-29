@@ -4,7 +4,7 @@
     --color: #0077ff;
     font-family: inherit;
     display: inline-block;
-    width: 6em;
+    width: 75%;
     height: 2.6em;
     line-height: 2.5em;
     overflow: hidden;
@@ -17,6 +17,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    background-size: cover;
   }
   
   .questions button::before {
@@ -43,3 +44,23 @@
     top: -30px;
     left: -30px;
   }
+
+  .questions {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+    justify-content: center;
+    position: relative;
+    left: 45%;
+    top: 100px
+
+  }
+
+  .backgroundQuiz{
+    position: absolute;
+  }
+   

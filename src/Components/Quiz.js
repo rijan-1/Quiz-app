@@ -29,7 +29,7 @@ export const Quiz = () => {
   }
 
   return (
-    <div>
+    <div className="backgroundQuiz">
       <div className="questions">
         {Questions[questionNumber].prompt}
         <button

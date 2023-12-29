@@ -13,7 +13,7 @@ const App = () => {
   const [totalScore,setTotalScore] = useState(0)
   return (
     <div className='App'>
-      <h1 className='Header'>Quiz App</h1>
+      
     
 
       <div>
