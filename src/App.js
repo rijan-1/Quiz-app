@@ -1,33 +1,41 @@
-import { Main } from "./Components/Main"
-import {useState} from 'react'
-import { Quiz } from "./Components/Quiz"
-import './App.css'
-import { createContext } from "react"
-import { EndScreen } from "./Components/EndScreen"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
+import AppHeader from './components/header';
+import AppHero from './components/hero';
+import AppAbout from './components/about';
+import AppServices from './components/services';
+import AppWorks from './components/works';
 
-export const myContext = createContext()
-const App = () => {
+import AppTestimonials from './components/testimonials';
+import Testimonials from './components/testomional2';
 
-  const [GameState, setGameState] = useState('Main')
-  const [totalScore,setTotalScore] = useState(0)
+import AppContact from './components/contact';
+import AppFooter from './components/footer';
+
+function App() {
   return (
-    <div className='App'>
-      
-    
-
-      <div>
-        <myContext.Provider value={{setGameState, setTotalScore,totalScore}}>
-        {GameState==='Main'&&<Main/>}
-        {GameState==='Quiz'&&<Quiz/>}
-        {GameState==='End'&&<EndScreen/>}
-
-</myContext.Provider>
-      </div> 
+    <div className="App">
+      <header id='header'>
+        <AppHeader />
+      </header>
+      <main>
+        <AppHero />
+        <AppAbout />
+              <AppTestimonials />
+        <AppServices />
+       
+        <AppWorks />
      
-      
+  
+         <Testimonials/>
+   
+    
+        <AppContact />
+      </main>
+   
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
