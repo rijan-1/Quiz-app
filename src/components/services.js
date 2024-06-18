@@ -6,7 +6,7 @@ const servicesData = [
   {
     id: 1,
     title: 'Renovations',
-    description: 'We offer a wide variety of home improvement work to transform your property and turn it into your dream home. Feel free to give us a call at any point to discuss your home improvement project and how we can help you.'
+    description: 'We provide a broad range of home renovation services to make your house into the house of your dreams. Please dont hesitate to contact us to talk about your home improvement project and how we can support you.'
   },
   {
     id: 2,
