@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/daofarm.git/static/css/main.ee989012.css",
-    "main.js": "/daofarm.git/static/js/main.1a964ded.js",
-    "static/js/787.66715272.chunk.js": "/daofarm.git/static/js/787.66715272.chunk.js",
-    "index.html": "/daofarm.git/index.html",
-    "main.ee989012.css.map": "/daofarm.git/static/css/main.ee989012.css.map",
-    "main.1a964ded.js.map": "/daofarm.git/static/js/main.1a964ded.js.map",
-    "787.66715272.chunk.js.map": "/daofarm.git/static/js/787.66715272.chunk.js.map"
+    "main.css": "/static/css/main.ee989012.css",
+    "main.js": "/static/js/main.53644f68.js",
+    "static/js/787.66715272.chunk.js": "/static/js/787.66715272.chunk.js",
+    "index.html": "/index.html",
+    "main.ee989012.css.map": "/static/css/main.ee989012.css.map",
+    "main.53644f68.js.map": "/static/js/main.53644f68.js.map",
+    "787.66715272.chunk.js.map": "/static/js/787.66715272.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ee989012.css",
-    "static/js/main.1a964ded.js"
+    "static/js/main.53644f68.js"
   ]
 }
